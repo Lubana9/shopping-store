@@ -13,7 +13,7 @@ const ShoppingCard: React.FC = () => {
         }
         actions={[<Button>+ </Button>, <div>2 </div>, <Button>- </Button>]}
       >
-        <Card title="product name" bordered={false}>
+        <Card title="Price" bordered={false}>
           description
         </Card>
       </Card>
