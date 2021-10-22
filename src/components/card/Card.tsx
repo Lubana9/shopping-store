@@ -16,6 +16,7 @@ const ShoppingCard: React.FC<CardProps> = ({ data }) => {
   const handelDecrement = () => {
     if (count > 0) setCount(count - 1);
   };
+
   return (
     <div className="card-container">
       <Card
@@ -24,7 +25,7 @@ const ShoppingCard: React.FC<CardProps> = ({ data }) => {
         actions={[
           <Button onClick={handelIncrement}>+ </Button>,
           <div> {count}</div>,
-          <Button onClick={handelDecrement}>- </Button>,
+          <Button onClick={handelDecrement}>-</Button>,
         ]}
       >
         <Card className="card-title" title={`${data.price}$`} bordered={false}>
