@@ -9,13 +9,13 @@ export type CardProps = {
 };
 const ShoppingCard: React.FC<CardProps> = ({ data }) => {
   return (
-    <div>
+    <div className="card-container">
       <Card
-        className="card-img"
-        cover={<img src={data.image} alt="product" />}
+        className="img-container"
+        cover={<img className="card-img" src={data.image} alt="product" />}
         actions={[<Button>+ </Button>, <div>2 </div>, <Button>- </Button>]}
       >
-        <Card title={`${data.price}$`} bordered={false}>
+        <Card className="card-title" title={`${data.price}$`} bordered={false}>
           {data.title}
         </Card>
       </Card>

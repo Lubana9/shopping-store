@@ -7,22 +7,22 @@ import "./style.css";
 
 export type InputProps = {
   value: string;
-  onChange: (e: string) => void;
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
 };
 const InputGroup: React.FC<InputProps> = ({ onChange, value }) => {
-  const onSearch = useCallback(
-    (e: React.FormEvent<HTMLInputElement>) => {
-      onChange(e.currentTarget.value);
-    },
-    [onChange]
-  );
+  // const onSearch = useCallback(
+  //   (e: ) => {
+  //     onChange(e.currentTarget.value);
+  //   },
+  //   [onChange]
+  // );
   return (
     <div className="input">
       <Input
         value={value}
         placeholder="Search..."
         size="middle"
-        onChange={onSearch}
+        onChange={onChange}
       />
     </div>
   );
