@@ -28,12 +28,7 @@ const HomPage: React.FC = () => {
   };
   return (
     <>
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        onInput={handelChange}
-      />
+      <InputGroup value={value} onChange={handelChange} />
       <div className="grid">
         {list.map((item: StoreItem) => {
           return <ShoppingCard data={item} key={item.id} />;
