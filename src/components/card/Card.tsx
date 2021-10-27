@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 import "./style.css";
 import "antd/dist/antd.css";
-import { Card, Button, Badge, Avatar } from "antd";
+import { PlusCircleOutlined, MinusCircleOutlined } from "@ant-design/icons";
+import { Card, Button, Badge } from "antd";
 import { StoreItem } from "src/store/StorItem";
 export type CardProps = {
   data: StoreItem;
@@ -24,8 +25,8 @@ const ShoppingCard: React.FC<CardProps> = ({ data }) => {
           className="img-container"
           cover={<img className="card-img" src={data.image} alt="product" />}
           actions={[
-            <Button onClick={handelIncrement}>+ </Button>,
-            <div> {`${count * data.price} $`}</div>,
+            <Button onClick={handelIncrement}>+</Button>,
+            <div> {`${(count * data.price).toFixed(2)} $`}</div>,
             <Button onClick={handelDecrement}>-</Button>,
           ]}
         >

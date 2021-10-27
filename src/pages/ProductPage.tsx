@@ -5,6 +5,7 @@ import ShoppingCard from "@components/card/Card";
 import { Empty, Input } from "antd";
 import axios from "axios";
 import { StoreItem } from "src/store/StorItem";
+
 import "./style.css";
 import "@styles/style.css";
 
@@ -12,9 +13,10 @@ const ProductPage: React.FC = () => {
   const [value, setValue] = useState("");
   const [list, setList] = useState([]);
   const [loading, setIsLoading] = useState(false);
+
   useEffect(() => {
     setIsLoading(true);
-    axios.get("https://fakestoreapi.com/products").then((item: any) => {
+    axios.get(`https://fakestoreapi.com/products`).then((item: any) => {
       setIsLoading(false);
       setList(item.data);
     });

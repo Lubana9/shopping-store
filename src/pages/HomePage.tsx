@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 
 import Card from "@components/card/Card";
+import ShoppingCard from "@components/card/Card";
+import Categories from "@components/categories/Categories";
 import axios from "axios";
+import { Link, useHistory } from "react-router-dom";
+import { StoreItem } from "src/store/StorItem";
+
+import { routes } from "../configs/config";
+import ProductPage from "./ProductPage";
 
 const HomPage: React.FC = () => {
   const [list, setList] = useState([]);
@@ -10,17 +17,21 @@ const HomPage: React.FC = () => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get("https://fakestoreapi.com/products/categories")
-      .then((products: any) => {
+      .get(`https://fakestoreapi.com/products/categories`)
+      .then((item: any) => {
         setIsLoading(false);
-        setList(products.data);
+        setList(item.data);
       });
   }, []);
 
   return (
     <>
-      {list.map((Products) => {
-        return <div> {Products}</div>;
+      {list.map((product) => {
+        return (
+          <Link to={routes.items.mask1}>
+            <Categories data={product}></Categories>
+          </Link>
+        );
       })}
     </>
   );
