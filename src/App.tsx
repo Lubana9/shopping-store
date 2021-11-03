@@ -10,8 +10,7 @@ import "@styles/style.css";
 function App() {
   return (
     <BrowserRouter>
-      <Route path={routes.items.mask} component={HomPage} />
-      <Route path={routes.items.mask1} component={ProductPage} />
+      <Route path={routes.items.mask} component={ProductPage} />
       <Redirect to={routes.items.mask} />
     </BrowserRouter>
   );

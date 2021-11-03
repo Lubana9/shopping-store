@@ -3,10 +3,12 @@ export type StoreItem = {
   price: number;
   image: string;
   id: number;
+  category: string;
 };
-// export type StoreCategories = {
-//   electronics: Array<T>;
-//   jewelery:
-//   men's clothing:
-//   women's clothing:
-// }
+
+export const Product = [
+  "electronics",
+  "jewelery",
+  "men's clothing",
+  "women's clothing",
+];

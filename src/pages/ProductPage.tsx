@@ -16,10 +16,12 @@ const ProductPage: React.FC = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    axios.get(`https://fakestoreapi.com/products`).then((item: any) => {
-      setIsLoading(false);
-      setList(item.data);
-    });
+    axios
+      .get(`https://fakestoreapi.com/products?sort=desc`)
+      .then((item: any) => {
+        setIsLoading(false);
+        setList(item.data);
+      });
   }, []);
   const handelChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value.toLowerCase();

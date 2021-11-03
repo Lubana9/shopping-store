@@ -4,7 +4,7 @@ import { Card } from "antd";
 import "antd/dist/antd.css";
 import "./style.css";
 export type CategoriesProps = {
-  data: [];
+  data: string[];
   onClick?: React.MouseEventHandler;
 };
 const Categories: React.FC<CategoriesProps> = ({ data, onClick }) => {
